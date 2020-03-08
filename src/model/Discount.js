@@ -9,8 +9,12 @@ const DiscountSchema = new Schema({
     type: Number,
     required: true
   },
-  id_user: {
+  user_id: {
     type: ObjectId
+  },
+  used: {
+    type: Boolean,
+    default: false,
   }
 });
 

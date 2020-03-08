@@ -14,10 +14,16 @@ class DiscountService {
     }
 
     putDiscount(discount){
-        return Discount.update(discount)
+        return Discount.update(discount, { used: true} )
     }
 
+    patchDiscount(discount,updateData){
+        return Discount.update(discount,updateData)
+    }
 
+    deleteDiscount(discount){
+        return Discount.deleteOne(discount);
+    }
 }
 
 module.exports = new DiscountService();
