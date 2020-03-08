@@ -1,9 +1,11 @@
 const { Router } = require("express");
 
-const { index, store } = require("../controller/DiscountsController");
+const { index, show, store } = require("../controller/DiscountsController");
 
 const router = Router();
 
-router.get("/", index).post("/", store);
+router.get("/", index)
+        .get('/:_id', show)
+        .post("/", store);
 
 module.exports = router;

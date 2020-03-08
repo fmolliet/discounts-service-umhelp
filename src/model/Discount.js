@@ -3,15 +3,14 @@ const { Schema, model, ObjectId } = require("mongoose");
 const DiscountSchema = new Schema({
   type: {
     type: String,
-    required: true
+    default: 'percent'
   },
   value: {
     type: Number,
     required: true
   },
-  idUser: {
-    type: ObjectId,
-    required: true
+  id_user: {
+    type: ObjectId
   }
 });
 

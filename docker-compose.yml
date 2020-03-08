@@ -7,6 +7,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: toor
     ports:
-      - "27017:27017"
+      - "27016:27017"
     volumes:
       - ./database-volume:/var/lib/mongodb/data
