@@ -14,11 +14,11 @@ class DiscountService {
     }
 
     putDiscount(discount){
-        return Discount.update(discount, { used: true} )
+        return Discount.updateOne(discount, { used: true} )
     }
 
     patchDiscount(discount,updateData){
-        return Discount.update(discount,updateData)
+        return Discount.updateOne(discount,updateData)
     }
 
     deleteDiscount(discount){
