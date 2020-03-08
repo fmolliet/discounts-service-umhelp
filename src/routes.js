@@ -1,5 +1,9 @@
 const { Router } = require('express');
 
-const routes = Router();
+const discountsRouter = require('./router')
 
-module.exports = routes;
+const router = Router();
+
+router.use('/discounts', discountsRouter)
+
+module.exports = router;
