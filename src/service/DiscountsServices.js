@@ -2,7 +2,7 @@ const Discount = require("../model/Discount");
 
 class DiscountService {
     indexDiscount() {
-        return Discount.find()
+        return Discount.find();
     }
 
     showDiscount(search){
@@ -23,6 +23,10 @@ class DiscountService {
 
     deleteDiscount(discount){
         return Discount.deleteOne(discount);
+    }
+
+    getDiscountId(search){
+        return Discount.find(search).sort({ 'value': -1 }).limit(1);
     }
 }
 

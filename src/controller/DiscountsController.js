@@ -1,4 +1,4 @@
-const { indexDiscount, postDiscount, putDiscount, patchDiscount, showDiscount, deleteDiscount } = require("../service/DiscountsServices");
+const { indexDiscount, postDiscount, putDiscount, patchDiscount, showDiscount, deleteDiscount,getDiscountId } = require("../service/DiscountsServices");
 
 class DiscountsController {
   async index(req, res) {
@@ -49,6 +49,15 @@ class DiscountsController {
   async destroy(req, res){
     try {
       const discount = await deleteDiscount(req.query);
+      return res.status(200).json(discount);
+    } catch (err) {
+      return res.status(400).json(err);
+    }
+  }
+
+  async getDiscountFrom(req, res){
+    try {
+      const discount = await getDiscountId(req.query);
       return res.status(200).json(discount);
     } catch (err) {
       return res.status(400).json(err);
